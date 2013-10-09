@@ -1,0 +1,39 @@
+header,
+nav,
+footer
+{
+	text-align: center
+}
+
+nav
+{
+	display: block;
+	float: left;
+	width: 200px;
+	background: #eee;
+}
+
+nav a
+{
+	display: block;
+	text-align: left;
+}
+
+#content
+{
+	float: right;
+	width: 450px;
+	background: #aaa;
+}
+
+body 
+{
+	font-family: arial, sans-serif;
+	width: 700px;
+	margin: 50px auto;
+}
+
+footer
+{
+	clear: both;
+}
