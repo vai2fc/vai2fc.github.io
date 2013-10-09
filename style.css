@@ -11,6 +11,7 @@ nav
 	float: left;
 	width: 200px;
 	background: #eee;
+	font-size: 20em;
 }
 
 nav a
@@ -24,6 +25,7 @@ nav a
 	float: right;
 	width: 450px;
 	background: #aaa;
+	color: green;
 }
 
 body 
