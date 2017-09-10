@@ -1,55 +1,30 @@
-<!DOCTYPE HTML>
+---
+layout: default
+robots: noindex
+---
 
-<html>
+<div class="main-post-list">
 
-<link rel="stylesheet" href="style.css">
+  <ol class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        <p class="excerpt">{{ post.excerpt | strip_html }}&hellip;</p>
+        <div class="post-list__meta">
+            <time datetime="{{ post.date | date: "%-d %b %Y" }}" class="post-list__meta--date date">{{ post.date | date: "%-d %b %Y" }}</time>
+            {% if post.tags.size > 0 %}
+            &#8226; <span class="post-meta__tags">on {% for tag in post.tags %}<a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span>
+            {% endif %}
+        </div>
+        <hr class="post-list__divider">
+      </li>
+    {% endfor %}
+  </ol>
 
-<head>
-	<meta charset="utf=8">
+  <hr class="post-list__divider ">
 
-	<title>V.G.A. Ikeshoji-Orlati</title>
+  {% if paginator.previous_page or paginator.next_page %}
+      {% include pagination.html %}
+  {% endif %}
 
-</head>
-
-<body>
-	<header>
-		<h1>
-			V.G.A. Ikeshoji-Orlati</h1>
-	</header>
-
-	<nav>
-		<a href="CV.html">CV</a>
-		<a href="http://www.virginia.edu">University of Virginia</a>
-		<a href="http://www.virginia.edu/art/">McIntire Department of Art
-		<a href="http://www.virginia.edu/art/artarch/program/ca/">Classical Art & Archaeology Program</a>
-		<a href="http://praxis.scholarslab.org">The Praxis Program</a>
-		<a href="Links.html">Links & Things</a>
-	</nav>
-
-	<div id="content">
-		<h3>
-			Archaeology</h3>
-		<p>
-			Veronica Ikeshoji-Orlati is a PhD Candidate in the Classical Art & Archaeology program in the McIntire Department of Art at the University of Virginia. Her areas of research include South Italian and Sicilian pottery and vase-painting, the relationships between native Italic peoples and Greek colonists in South Italy, and the reconstruction and recontextualizion of ancient Greek and Roman musical performances. Veronica is also interested in Mediterranean pottery studies more broadly and the evolving role of archaeometric studies in understanding networks of pottery producers and consumers throughout antiquity.</p>
-		<h3>
-			Teaching</h3>
-		<p>
-			Veronica has a keen interest in pedagogical theory and practice. As a member of the Tomorrow's Professor Today Program at UVA, she has had the opportunity to discuss and reflect upon the shifting structures of university pedagogy at length. As the Vice-President for Outreach of the Charlottesville Chapter of the Archaeological Institute of America, she has also brought her passion for teaching the ancient Mediterranean to Charlottesville and Albemarle County high-schools.</p>
-		<h3>
-			Technology</h3>
-		<p>
-			In 2013, Veronica joined the third cohort of Praxis Fellows in the Scholars' Lab at the University of Virginia. The Praxis Fellowship is enabling her to cultivate the technical and interpersonal skills necessary to harness computing power more effectively in the study of various types of data.</p>
-		<h3>
-			Etc</h3>
-		<p>
-			</p>			
-
-	</div>
-
-	<footer>
-		<p>
-			This site is an experiment and work in progress.</p>
-	</footer>
-</body>
-
-</html>
+</div>

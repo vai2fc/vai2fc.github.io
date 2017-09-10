@@ -1,0 +1,48 @@
+# Site settings
+title: Veronica Ikeshoji-Orlati
+description: 'Classical Archaeologist. Digital Humanist. Data Enthusiast.'
+url: 'http://vai2fc.github.io/'
+baseurl: 'http://vai2fc.github.io/'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+
+author:
+  name: 'Veronica Ikeshoji-Orlati'
+  email: v.ikeshoji.orlati@gmail.com
+  twitter_username: '@vikeshojiorlati'
+  github_username:  vai2fc
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+    scope:
+      path: ''
+      type: 'pages'
+    values:
+        layout: 'page'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+gems: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+include: '_pages'
